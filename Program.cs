@@ -137,3 +137,29 @@ void ex3()
     Console.WriteLine(deposite);
 }
 
+void ex4()
+{
+    Console.WriteLine("Введите науальное число");
+    int a = Convert.ToInt32(Console.ReadLine());
+    int min = a;
+    int max = 0;
+    int place = 0; //Если левее минимальное число - 1, если максимальное - 0
+
+    while (a>0) 
+    {
+        int temp = a%10;
+        if (temp>max)
+        {
+            max = temp;
+            place = 0;
+        }
+        if (temp<min)
+        {
+            min = temp;
+            place = 1;
+        }
+        a=a/10;
+    } 
+    if (place==0) Console.WriteLine("Максимальная цифра левее");
+    else Console.WriteLine("Минимальная цифра левее");
+}
